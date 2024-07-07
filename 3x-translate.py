@@ -5,7 +5,7 @@ class Scanner:
     '''Translate English tags to Chinese'''
 
     def __init__(self) -> None:
-        tag_trans_db = requests.get('https://cdn.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases/db.text.json').json()["data"]
+        tag_trans_db = requests.get('https://cdn.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases/db.text.json', timeout=7).json()["data"]
         self.trans_tag = {}
         self.trans_namespace = {}
         for namespace in tag_trans_db:

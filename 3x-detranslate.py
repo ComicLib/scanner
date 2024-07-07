@@ -5,7 +5,7 @@ class Scanner:
     '''Translate Chinese tags back to English'''
 
     def __init__(self) -> None:
-        zh2en = requests.get("https://cdn.jsdelivr.net/gh/ComicLib/EhTagTranslation_rev/zh2en.json").json()
+        zh2en = requests.get("https://cdn.jsdelivr.net/gh/ComicLib/EhTagTranslation_rev/zh2en.json", timeout=7).json()
         self.detrans_namespace = zh2en["namespace"]
         self.detrans_tag = zh2en["tag"]
     
